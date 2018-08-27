@@ -11,7 +11,11 @@ import { Core } from '../../core/core';
 export class HomeComponent implements OnInit {
   public user: User;
 
-  constructor(private behance: BehanceService, public globals: AppGlobals, public core: Core) { }
+  constructor(
+    private behance: BehanceService,
+    public globals: AppGlobals,
+    public core: Core
+  ) {}
 
   getUser() {
     this.behance.getUser().subscribe(res => {
@@ -22,5 +26,4 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.getUser();
   }
-
 }

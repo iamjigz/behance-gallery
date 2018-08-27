@@ -10,9 +10,13 @@ import { HeaderComponent } from './ui/header/header.component';
 import { FooterComponent } from './ui/footer/footer.component';
 import { HomeComponent } from './ui/home/home.component';
 import { environment } from '../environments/environment';
+import { BannerComponent } from './ui/home/banner/banner.component';
+import { AboutComponent } from './ui/home/about/about.component';
+import { ServicesComponent } from './ui/home/services/services.component';
+import { ContactComponent } from './ui/home/contact/contact.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, FooterComponent, HomeComponent],
+  declarations: [AppComponent, HeaderComponent, FooterComponent, HomeComponent, BannerComponent, AboutComponent, ServicesComponent, ContactComponent],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,

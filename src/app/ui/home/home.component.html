@@ -1,122 +1,83 @@
-<div class="view intro" style="background-image: url(https://source.unsplash.com/n6jNHTg2C2w); background-attachment: fixed; height: 1200px;">
-  <div class="full-bg-img mask rgba-black-light">
-    <div class="container">
-      <div class="d-flex align-items-center justify-content-center" style="height: 1200px">
-        <div class="row mt-5">
-          <div class="col-md-12 wow fadeIn mb-3">
-            <div class="container intro-info-content text-center" *ngIf="user">
-              <div class="avatar mx-auto">
-                <img [src]="user.images['276']" class="img-fluid rounded-circle z-depth-3 mx-auto d-block animated flipInX" data-wow-delay="0.4s" alt="avatar">
+<main id="main">
+  <div id="banner"></div>
+  <section *ngIf="user">
+    <app-banner [user]="user"></app-banner>
+  </section>
+
+  <div id="about"></div>
+  <section class="container" *ngIf="user">
+    <app-about [user]="user"></app-about>
+  </section>
+
+  <div class="view intro" style="background-image: none; z-index: 0; min-height: 700px;">
+    <div class="full-bg-img mask rgba-black-light">
+      <div class="container flex-center">
+        <div class="row mt-5 py-5">
+          <div class="col-md-12 wow fadeIn mb-3" style="animation-name: none; visibility: visible;">
+            <div class="text-center">
+              <h1 class="display-1 mb-2 wow white-text fadeInDown" data-wow-delay="0.3s">Social <a class="amber-text font-bold">Links</a></h1>
+              <h5 class="font-up mb-3 mt-1 font-bold wow white-text fadeInDown" data-wow-delay="0.4s">Check other works</h5>
+              <a class="btn btn-elegant btn-lg wow fadeInDown waves-effect waves-light" mdbWavesEffect data-wow-delay="0.4s" (click)="core.navigate(globals.facebook)">Facebook</a>
+              <a class="btn btn-outline-amber btn-lg wow fadeInDown waves-effect waves-light" mdbWavesEffect data-wow-delay="0.4s" (click)="core.navigate(globals.instagram)">Instagram</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="video-parallax">
+      <video src="https://staging.coverr.co/s3/mp4/Here-Boy.mp4" frameborder="0" autoplay="" loop=""></video>
+    </div>
+  </div>
+
+  <div id="services"></div>
+  <section class="container">
+    <app-services></app-services>
+  </section>
+
+  <div class="view intro" style="background-image: url(https://source.unsplash.com/hfk6xOjQlFk); background-attachment: fixed; height: 1200px;">
+    <div class="full-bg-img mask rgba-black-light">
+    </div>
+  </div>
+
+  <div class="view intro" style="background-image: url(https://source.unsplash.com/-T6CrnPs0LM); background-attachment: fixed; min-height: 1200px;">
+    <div class="full-bg-img mask rgba-black-strong">
+      <div class="container">
+        <div class="d-flex align-items-center d-flex justify-content-center" style="height: 700px">
+          <div class="row mt-5">
+            <div class="col-md-12 wow fadeIn mb-3">
+              <div class="intro-info-content text-center">
+                <h1 class="display-1 mb-2 wow amber-text fadeInDown" data-wow-delay="0.3s" href="#contact">Get in touch!</h1>
+                <h4 class="mb-3 mt-1 white-text font-bold wow fadeIn" data-wow-delay="0.4s">Lorem ipsum dolor sit amet</h4>
+                <a class="btn btn-outline-amber btn-lg wow fadeInDown waves-effect waves-light" mdbWavesEffect data-wow-delay="0.4s" routerLink="/contact">
+                  Contact Me
+                </a>
               </div>
-              <h1 class="display-1 wow white-text fadeInDown" data-wow-delay="0.3s">{{ user.first_name }} <a class="amber-text font-bold">{{ user.last_name }}</a></h1>
-              <h5 [innerHtml]="user.fields.join(' | ')" class="text-center font-up mb-3 mt-1 font-bold wow white-text fadeIn"></h5>
-              <a class="btn btn-elegant btn-lg wow fadeInDown waves-effect waves-light" mdbWavesEffect data-wow-delay="0.4s" routerLink="/projects">Portfolio</a>
-              <a class="btn btn-outline-amber btn-lg wow fadeInDown waves-effect waves-light" mdbWavesEffect data-wow-delay="0.4s" (click)="core.navigate(user.url)">View Behance</a>
-              <!-- <div fxLayout fxLayoutAlign="center center" fxLayoutGap="10px" class="white-text">
-                <p><i class="fa fa-thumbs-up amber-text"></i> {{ user.stats.appreciations | number }}</p>
-                <p><i class="fa fa-comments amber-text"></i> {{ user.stats.comments | number }}</p>
-                <p><i class="fas fa-users amber-text"></i> {{ user.stats.followers | number }}</p>
-                <p><i class="fas fa-eye amber-text"></i> {{ user.stats.views | number}}</p>
-              </div> -->
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<div class="container" *ngIf="user">
-  <!--Grid row-->
-  <div class="row">
-    <!--Grid column-->
-    <div class="col-md-12 text-center mb-5">
-      <h1 class="font-bold amber-text my-5">About Me</h1>
-      <p align="justify" class="text-center">{{ user.sections["About"] }}</p>
-    </div>
-    <!--Grid column-->
-  </div>
-  <!--Grid row-->
-</div>
+  <div id="contact" class="section"></div>
+  <section class="container">
+    <app-contact></app-contact>
+  </section>
 
-<div class="view intro" style="background-image: none; z-index: 0; min-height: 700px;">
-  <div class="full-bg-img mask rgba-black-light">
-    <div class="container flex-center">
-      <div class="row mt-5 py-5">
-        <div class="col-md-12 wow fadeIn mb-3" style="animation-name: none; visibility: visible;">
-          <div class="text-center">
-            <h1 class="display-1 mb-2 wow white-text fadeInDown" data-wow-delay="0.3s">Social <a class="amber-text font-bold">Links</a></h1>
-            <h5 class="font-up mb-3 mt-1 font-bold wow white-text fadeInDown" data-wow-delay="0.4s">Check other works</h5>
-            <a class="btn btn-elegant btn-lg wow fadeInDown waves-effect waves-light" mdbWavesEffect data-wow-delay="0.4s" (click)="core.navigate(globals.facebook)">Facebook</a>
-            <a class="btn btn-outline-amber btn-lg wow fadeInDown waves-effect waves-light" mdbWavesEffect data-wow-delay="0.4s" (click)="core.navigate(globals.instagram)">Instagram</a>
-          </div>
-        </div>
+  <section>
+    <div class="container-fluid py-5" style="background: #b1bace;">
+      <div class="flex-center">
+        <ul class="list-unstyled">
+          <li>
+            <h2 class="h2-responsive white-text mt-4 wow fadeIn" data-wow-delay="0.2s"><i class="fa fa-quote-left" aria-hidden="true"></i>
+              A camera is a tool for learning how to see without a camera.
+              <i class="fa fa-quote-right" aria-hidden="true"></i></h2>
+          </li>
+          <li>
+            <h4 class="font-italic mt-4 white-text wow fadeIn" data-wow-delay="0.4s">~ Dorothea Lange</h4>
+          </li>
+        </ul>
       </div>
     </div>
-  </div>
-  <div class="video-parallax"><video src="https://storage.googleapis.com/coverr-main/mp4/Keep_Running.mp4" frameborder="0" autoplay="" loop=""></video>
-  </div>
-</div>
-
-<div class="container">
-  <!--Grid row-->
-  <div class="row">
-    <!--Grid column-->
-    <div class="col-md-12 text-center my-5">
-      <h1 class="font-bold amber-text mb-5">Lorem ipsum dolor sit amet, consectetur quis elit.</h1>
-      <p align="justify">Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis commodi porro, cumque provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor sit
-        amet, consectetur quis elit. Perspiciatis commodi porro, cumque provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis
-        elit. Perspiciatis commodi porro, cumque provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis
-        commodi porro, cumque provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis commodi porro, cumque
-        provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis commodi porro, cumque provident rem corporis
-        odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis commodi porro, cumque provident rem corporis odit, ut quas dolores
-        maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis commodi porro, cumque provident rem corporis odit, ut quas dolores maxime nesciunt possimus
-        quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.</p>
-    </div>
-    <!--Grid column-->
-  </div>
-  <!--Grid row-->
-</div>
-
-<div class="view intro" style="background-image: url(https://source.unsplash.com/HiO3MRgXJt4); background-attachment: fixed; height: 1200px;">
-  <div class="full-bg-img mask rgba-black-light">
-  </div>
-</div>
-
-<div class="view intro" style="background-image: url(https://source.unsplash.com/-T6CrnPs0LM); background-attachment: fixed; min-height: 1200px;">
-  <div class="full-bg-img mask rgba-black-strong">
-    <div class="container">
-      <div class="d-flex align-items-center d-flex justify-content-center" style="height: 700px">
-        <div class="row mt-5">
-          <div class="col-md-12 wow fadeIn mb-3">
-            <div class="intro-info-content text-center">
-              <h1 class="display-1 mb-2 wow amber-text fadeInDown" data-wow-delay="0.3s">Get in touch!</h1>
-              <h4 class="mb-3 mt-1 white-text font-bold wow fadeIn" data-wow-delay="0.4s">Lorem ipsum dolor sit amet</h4>
-              <a class="btn btn-outline-amber btn-lg wow fadeInDown waves-effect waves-light" mdbWavesEffect data-wow-delay="0.4s" routerLink="/contact">Contact Me</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="container">
-  <!--Grid row-->
-  <div class="row">
-    <!--Grid column-->
-    <div class="col-md-12 text-center my-5">
-      <h1 class="font-bold amber-text mb-5">Lorem ipsum dolor sit amet, consectetur quis elit.</h1>
-      <p align="justify">Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis commodi porro, cumque provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor sit
-        amet, consectetur quis elit. Perspiciatis commodi porro, cumque provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis
-        elit. Perspiciatis commodi porro, cumque provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis
-        commodi porro, cumque provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis commodi porro, cumque
-        provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis commodi porro, cumque provident rem corporis
-        odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis commodi porro, cumque provident rem corporis odit, ut quas dolores
-        maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis commodi porro, cumque provident rem corporis odit, ut quas dolores maxime nesciunt possimus
-        quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.</p>
-    </div>
-    <!--Grid column-->
-  </div>
-  <!--Grid row-->
-</div>
+  </section>
+</main>

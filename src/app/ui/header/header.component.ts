@@ -7,10 +7,7 @@ import { AppGlobals } from '../../core/app.globals';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  constructor(public globals: AppGlobals) {}
 
-  constructor(public globals: AppGlobals) { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
