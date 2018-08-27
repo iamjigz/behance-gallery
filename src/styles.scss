@@ -1,1 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('//fonts.googleapis.com/css?family=Roboto+Slab');
+
+html {
+  font-size: 14px;
+}
+
+body {
+  // background-color: #a8a3a3;
+  // font-family: 'Roboto Slab', serif;
+}
+
+.view {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.navbar {
+  background-color: transparent;
+}
+
+.top-nav-collapse {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  html {
+    font-size: 12px;
+  }
+
+  display-1 {
+    font-size: 18px;
+  }
+}

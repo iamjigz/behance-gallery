@@ -1,0 +1,41 @@
+<header>
+  <mdb-navbar SideClass="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar intro-fixed-nav" [containerInside]="false">
+    <logo>
+      <a class="logo navbar-brand" routerLink="/">
+        <strong>Garry Delos Reyes</strong>
+      </a>
+    </logo>
+    <links>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item waves-light" mdbRippleRadius>
+          <a class="nav-link" routerLink="/">Home
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item waves-light" mdbRippleRadius routerLinkActive="active">
+          <a class="nav-link" routerLink="/projects">Projects</a>
+        </li>
+        <li class="nav-item waves-light" mdbRippleRadius routerLinkActive="active">
+          <a class="nav-link" routerLink="/contact">Contact</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav nav-flex-icons">
+        <li class="nav-item waves-light" mdbRippleRadius>
+          <a class="nav-link" [href]="globals.facebook" target="_blank">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+        </li>
+        <li class="nav-item waves-light" mdbRippleRadius>
+          <a class="nav-link" [href]="globals.instagram" target="_blank">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </li>
+        <li class="nav-item waves-light" mdbRippleRadius>
+          <a class="nav-link" [href]="globals.behance" target="_blank">
+            <i class="fab fa-behance"></i>
+          </a>
+        </li>
+      </ul>
+    </links>
+  </mdb-navbar>
+</header>
