@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './ui/header/header.component';
@@ -15,13 +16,26 @@ import { AboutComponent } from './ui/home/about/about.component';
 import { ServicesComponent } from './ui/home/services/services.component';
 import { ContactComponent } from './ui/home/contact/contact.component';
 import { ProjectsComponent } from './ui/projects/projects.component';
+import { ProjectComponent } from './ui/projects/project/project.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, FooterComponent, HomeComponent, BannerComponent, AboutComponent, ServicesComponent, ContactComponent, ProjectsComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    FooterComponent,
+    HomeComponent,
+    BannerComponent,
+    AboutComponent,
+    ServicesComponent,
+    ContactComponent,
+    ProjectsComponent,
+    ProjectComponent
+  ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     HttpClientModule,
+    BrowserAnimationsModule,
     MDBBootstrapModule.forRoot(),
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production

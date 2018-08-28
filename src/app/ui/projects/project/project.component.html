@@ -1,0 +1,19 @@
+<section class="view text-center h-100" style="background-image: url(https://source.unsplash.com/CewT9iFBcgE); background-attachment: fixed; height: 1200px;">
+  <div *ngIf="project" style="margin-top: 50px">
+    <h2 class="amber-text font-weight-bold h1 py-5">
+      <strong>{{ project.name }}</strong>
+    </h2>
+    <p class="white-text pb-5 text-center mx-xl-5 px-xl-5">{{ project.description }}</p>
+    <a class="btn btn-outline-amber btn-lg wow fadeInDown waves-effect waves-light" mdbWavesEffect data-wow-delay="0.4s" routerLink="/projects">Back</a>
+
+    <section *ngIf="images.length > 0">
+      <div class="row no-gutters justify-content-center">
+        <div class="col-md-3 view zoom overlay rounded" *ngFor="let image of images">
+          <img [src]="image.src" class="img-fluid mx-auto d-block wow" [ngClass]="image.animate" style="width: auto; height: 300px;"
+            data-wow-delay="0.6s" data-wow-duration="1s" alt="Responsive image">
+          <div class="mask flex-center waves-effect waves-light rgba-grey-light"></div>
+        </div>
+      </div>
+    </section>
+  </div>
+</section>

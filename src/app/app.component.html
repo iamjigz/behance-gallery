@@ -1,6 +1,6 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<section>
+<main [@fadeAnimation]="o.isActivated ? o.activatedRoute : ''">
   <app-header></app-header>
-  <router-outlet></router-outlet>
+  <router-outlet #o="outlet" (activate)="onActivate($event)"></router-outlet>
   <app-footer></app-footer>
-</section>
+</main>

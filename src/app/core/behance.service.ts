@@ -16,7 +16,9 @@ export class User {
   // public occupation?: string;
 }
 
-export class Project {}
+export class Project {
+  modules: any;
+}
 
 const httpHeader = new HttpHeaders()
   .set('Content-Type', 'text/json')
@@ -62,7 +64,7 @@ export class BehanceService {
     return this.get(`/users/${this.globals.user_id}/projects`);
   }
 
-  public getProject(id: number) {
+  public getProject(id: number | string) {
     return this.get(`/projects/${id}`);
   }
 }

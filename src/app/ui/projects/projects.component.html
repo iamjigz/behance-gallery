@@ -1,3 +1,38 @@
-<p>
-  projects works!
-</p>
+<div class="view intro" style="background-image: url(https://source.unsplash.com/CewT9iFBcgE); background-attachment: fixed; height: 400px;">
+  <div class="full-bg-img mask rgba-black-light">
+    <div class="container">
+      <div class="d-flex align-items-center d-flex justify-content-center" style="height: 400px">
+        <div class="row mt-5">
+          <div class="col-md-12 wow fadeIn mb-3">
+            <div class="intro-info-content text-center">
+              <h1 class="display-1 mb-2 wow white-text fadeInDown" data-wow-delay="0.3s">Project
+                <a class="amber-text font-bold">List</a>
+              </h1>
+              <h5 class="font-up mb-3 mt-1 font-bold white-text wow fadeIn" data-wow-delay="0.4s">All projects found on Behance.</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section *ngIf="projects" class="view section text-center" style="background-image: url(https://source.unsplash.com/o8SzLhKUEBU);">
+  <div class="row d-flex justify-content-center">
+    <div *ngFor="let proj of projects" class="col-lg-4 col-md-6 mb-lg-0 mb-3">
+      <div class="overlay rounded wow fadeInUp" data-wow-delay="0.6s">
+        <div class="view zoom">
+          <img [src]="proj.covers.original" class="img-fluid" alt="" style="width: auto; height: 400px;">
+          <div class="mask flex-center rgba-black-strong white-text" [routerLink]="['/project', proj.id]">Click to view</div>
+        </div>
+
+        <div class="card-body">
+          <h4 class="font-weight-bold brown-text mt-2 mb-3 wow fadeInUp" data-wow-delay="0.6s">{{ proj.name }}</h4>
+          <p class="black-text" [innerHtml]="proj.fields.join(', ')"></p>
+          <div fxLayout fxLayoutAlign="center center" fxLayoutGap="10px" class="brown-text">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
