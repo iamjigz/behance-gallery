@@ -8,7 +8,7 @@ import { BehanceService } from '../../../core/behance.service';
   styleUrls: ['./project.component.scss']
 })
 export class ProjectComponent implements OnInit {
-  private project: any;
+  public project: any;
   images: any[];
 
   constructor(private route: ActivatedRoute, private behance: BehanceService) {}

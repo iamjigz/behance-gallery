@@ -1,8 +1,6 @@
 <main id="main">
   <div id="main"></div>
-  <section *ngIf="user">
-    <app-banner [user]="user"></app-banner>
-  </section>
+  <app-banner [user]="user"></app-banner>
 
   <div id="about"></div>
   <section class="container" *ngIf="user">

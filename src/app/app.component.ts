@@ -11,7 +11,12 @@ export class AppComponent {
   title = 'behance-gallery';
 
   onActivate(event) {
-    console.log(event.constructor.name);
+    if (
+      event.constructor.name !== 'ProjectsComponent' ||
+      event.constructor.name !== 'ProjectComponent'
+    ) {
+      return;
+    }
     const scrollToTop = window.setInterval(() => {
       const pos = window.pageYOffset;
       if (pos > 0) {
