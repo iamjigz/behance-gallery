@@ -14,9 +14,10 @@ import { BannerComponent } from './ui/home/banner/banner.component';
 import { AboutComponent } from './ui/home/about/about.component';
 import { ServicesComponent } from './ui/home/services/services.component';
 import { ContactComponent } from './ui/home/contact/contact.component';
+import { ProjectsComponent } from './ui/projects/projects.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, FooterComponent, HomeComponent, BannerComponent, AboutComponent, ServicesComponent, ContactComponent],
+  declarations: [AppComponent, HeaderComponent, FooterComponent, HomeComponent, BannerComponent, AboutComponent, ServicesComponent, ContactComponent, ProjectsComponent],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
