@@ -45,22 +45,23 @@ export class ProjectComponent implements OnInit {
           });
         }
       });
+      this.setMeta();
     });
   }
 
   setMeta() {
     this.meta.addTags([
-      { name: 'author', content: 'Jigno Alfred V. Venezuela' },
-      {
-        name: 'keywords',
-        content: this.project.fields.join(', ')
-      },
-      { name: 'image', content: this.project.covers.original },
+      { name: 'title', content: this.project.name },
       {
         name: 'description',
         content: this.project.description
       },
-      { name: 'title', content: this.project.name }
+      { name: 'image', content: this.project.covers.original },
+      { name: 'author', content: 'Jigno Alfred V. Venezuela' },
+      {
+        name: 'keywords',
+        content: this.project.fields.join(', ')
+      }
     ]);
   }
 

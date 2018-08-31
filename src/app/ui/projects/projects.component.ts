@@ -33,16 +33,16 @@ export class ProjectsComponent implements OnInit {
 
   setMeta() {
     this.meta.addTags([
-      { name: 'author', content: 'Jigno Alfred V. Venezuel' },
-      {
-        name: 'keywords',
-        content:
-          'angular seo, angular universal, photography, portfolio, projects'
-      },
-      { name: 'image', content: 'https://source.unsplash.com/CewT9iFBcgE' },
+      { name: 'title', content: 'Behance Gallery' },
       {
         name: 'description',
         content: `The profile and projects on this page are fetched from the user's Behance profile using the Behance API.`
+      },
+      { name: 'image', content: 'https://source.unsplash.com/CewT9iFBcgE' },
+      { name: 'author', content: 'Jigno Alfred V. Venezuela' },
+      {
+        name: 'keywords',
+        content: 'angular seo, angular universal, photography, portfolio'
       }
     ]);
   }
