@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { Meta, Title } from '@angular/platform-browser';
+
 import { BehanceService } from '../../../core/behance.service';
 
 @Component({
@@ -11,7 +13,12 @@ export class ProjectComponent implements OnInit {
   public project: any;
   images: any[];
 
-  constructor(private route: ActivatedRoute, private behance: BehanceService) {}
+  constructor(
+    private route: ActivatedRoute,
+    private behance: BehanceService,
+    public meta: Meta,
+    public title: Title
+  ) {}
 
   getProject(id: number | string) {
     const animations = [
@@ -39,6 +46,22 @@ export class ProjectComponent implements OnInit {
         }
       });
     });
+  }
+
+  setMeta() {
+    this.meta.addTags([
+      { name: 'author', content: 'Jigno Alfred V. Venezuela' },
+      {
+        name: 'keywords',
+        content: this.project.fields.join(', ')
+      },
+      { name: 'image', content: this.project.covers.original },
+      {
+        name: 'description',
+        content: this.project.description
+      },
+      { name: 'title', content: this.project.name }
+    ]);
   }
 
   ngOnInit() {
