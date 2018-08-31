@@ -19,7 +19,15 @@ export class HomeComponent implements OnInit {
     public core: Core,
     public meta: Meta,
     public title: Title
-  ) {}
+  ) {
+    this.user = {
+      first_name: 'Jigno Alfred',
+      last_name: 'Venezuela',
+      image: 'https://avatars1.githubusercontent.com/u/15794810?s=460&v=4',
+      fields: ['Angular', 'JavaScript Cultist', 'Front-End Development'],
+      occupation: 'Web Developer'
+    };
+  }
 
   getUser() {
     this.behance.getUser().subscribe(res => {

@@ -4,16 +4,16 @@ import { Observable } from 'rxjs';
 import { AppGlobals } from './app.globals';
 
 export class User {
-  // public id?: number;
-  // public url?: string;
-  // public username?: string;
-  // public first_name?: string;
-  // public last_name?: string;
-  // public location?: string;
-  // public country?: string;
-  // public image?: string;
-  // public fields?: string[];
-  // public occupation?: string;
+  public id?: number;
+  public url?: string;
+  public username?: string;
+  public first_name?: string;
+  public last_name?: string;
+  public location?: string;
+  public country?: string;
+  public image?: string;
+  public fields?: string[];
+  public occupation?: string;
 }
 
 export class Project {
