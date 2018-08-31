@@ -45,24 +45,47 @@ export class ProjectComponent implements OnInit {
           });
         }
       });
-      this.setMeta();
+      this.updateTags();
     });
   }
 
-  setMeta() {
-    this.meta.addTags([
-      { name: 'title', content: this.project.name },
-      {
-        name: 'description',
-        content: this.project.description
-      },
-      { name: 'image', content: this.project.covers.original },
-      { name: 'author', content: 'Jigno Alfred V. Venezuela' },
-      {
-        name: 'keywords',
-        content: this.project.fields.join(', ')
-      }
-    ]);
+  // setMeta() {
+  //   this.meta.addTags(
+  //     [
+  //       { name: 'title', content: this.project.name },
+  //       {
+  //         name: 'description',
+  //         content: this.project.description
+  //       },
+  //       { name: 'image', content: this.project.covers.original },
+  //       { name: 'author', content: 'Jigno Alfred V. Venezuela' },
+  //       {
+  //         name: 'keywords',
+  //         content: this.project.fields.join(', ')
+  //       }
+  //     ],
+  //     false
+  //   );
+  // }
+
+  updateTags() {
+    this.meta.updateTag({ name: 'title', content: this.project.name });
+    this.meta.updateTag({
+      name: 'description',
+      content: this.project.description
+    });
+    this.meta.updateTag({
+      name: 'image',
+      content: this.project.covers.original
+    });
+    this.meta.updateTag({
+      name: 'author',
+      content: 'Jigno Alfred V. Venezuela'
+    });
+    this.meta.updateTag({
+      name: 'keywords',
+      content: this.project.fields.join(', ')
+    });
   }
 
   ngOnInit() {

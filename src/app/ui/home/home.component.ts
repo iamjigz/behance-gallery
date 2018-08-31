@@ -29,19 +29,22 @@ export class HomeComponent implements OnInit {
   }
 
   setMeta(user: User) {
-    this.meta.addTags([
-      { name: 'title', content: 'Behance Gallery' },
-      {
-        name: 'description',
-        content: `Sample portfolio page that fetches data from the user's Behance API.`
-      },
-      { name: 'image', content: 'https://source.unsplash.com/n6jNHTg2C2w' },
-      { name: 'author', content: 'Jigno Alfred V. Venezuela' },
-      {
-        name: 'keywords',
-        content: 'angular seo, angular universal, photography, portfolio'
-      }
-    ]);
+    this.meta.addTags(
+      [
+        { name: 'title', content: 'Behance Gallery' },
+        {
+          name: 'description',
+          content: `Sample portfolio page that fetches data from the user's Behance API.`
+        },
+        { name: 'image', content: 'https://source.unsplash.com/n6jNHTg2C2w' },
+        { name: 'author', content: 'Jigno Alfred V. Venezuela' },
+        {
+          name: 'keywords',
+          content: 'angular seo, angular universal, photography, portfolio'
+        }
+      ],
+      false
+    );
   }
 
   ngOnInit() {

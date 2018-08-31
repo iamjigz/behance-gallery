@@ -27,24 +27,47 @@ export class ProjectsComponent implements OnInit {
   getProjects() {
     this.behance.getProjects().subscribe(res => {
       this.projects = res.projects as Project[];
-      this.setMeta();
+      this.updateTags();
     });
   }
 
-  setMeta() {
-    this.meta.addTags([
-      { name: 'title', content: 'Behance Gallery' },
-      {
-        name: 'description',
-        content: `The profile and projects on this page are fetched from the user's Behance profile using the Behance API.`
-      },
-      { name: 'image', content: 'https://source.unsplash.com/CewT9iFBcgE' },
-      { name: 'author', content: 'Jigno Alfred V. Venezuela' },
-      {
-        name: 'keywords',
-        content: 'angular seo, angular universal, photography, portfolio'
-      }
-    ]);
+  // setMeta() {
+  //   this.meta.addTags(
+  //     [
+  //       { name: 'title', content: 'Behance Gallery' },
+  //       {
+  //         name: 'description',
+  //         content: `The profile and projects on this page are fetched from the user's Behance profile using the Behance API.`
+  //       },
+  //       { name: 'image', content: 'https://source.unsplash.com/CewT9iFBcgE' },
+  //       { name: 'author', content: 'Jigno Alfred V. Venezuela' },
+  //       {
+  //         name: 'keywords',
+  //         content: 'angular seo, angular universal, photography, portfolio'
+  //       }
+  //     ],
+  //     false
+  //   );
+  // }
+
+  updateTags() {
+    this.meta.updateTag({ name: 'title', content: 'Behance Gallery' });
+    this.meta.updateTag({
+      name: 'description',
+      content: `The profile and projects on this page are fetched from the user's Behance profile using the Behance API.`
+    });
+    this.meta.updateTag({
+      name: 'image',
+      content: 'https://source.unsplash.com/CewT9iFBcgE'
+    });
+    this.meta.updateTag({
+      name: 'author',
+      content: 'Jigno Alfred V. Venezuela'
+    });
+    this.meta.updateTag({
+      name: 'keywords',
+      content: 'angular seo, angular universal, photography, portfolio'
+    });
   }
 
   ngOnInit() {
