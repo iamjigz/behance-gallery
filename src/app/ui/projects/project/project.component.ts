@@ -22,7 +22,10 @@ export class ProjectComponent implements OnInit {
       'rotateInDownRight',
       'slideInDown',
       'fadeInLeftBig',
-      'bounceOutDown'
+      'bounceOutDown',
+      'flipOutX',
+      'jackInTheBox',
+      'rubberBand'
     ];
     this.images = [];
     this.behance.getProject(id).subscribe(res => {

@@ -9,12 +9,14 @@
                 <img [src]="user.images['276']" class="img-fluid rounded-circle z-depth-3 mx-auto d-block animated flipInX" data-wow-delay="0.4s"
                   alt="avatar">
               </div>
-              <h1 class="display-1 wow white-text fadeInDown" data-wow-delay="0.3s">{{ user.first_name }} <a class="amber-text font-bold">{{
-                  user.last_name }}</a></h1>
+              <h1 class="display-1 wow white-text fadeInDown" data-wow-delay="0.3s">
+                {{ user.first_name }}
+                <a class="amber-text font-bold">{{ user.last_name }} </a>
+              </h1>
               <h5 [innerHtml]="user.fields.join(' | ')" class="text-center font-up mb-3 mt-1 font-bold wow white-text fadeIn"></h5>
               <a class="btn btn-elegant btn-lg wow fadeInDown waves-effect waves-light" mdbWavesEffect data-wow-delay="0.4s" routerLink="/projects">Portfolio</a>
-              <a class="btn btn-outline-amber btn-lg wow fadeInDown waves-effect waves-light" mdbWavesEffect data-wow-delay="0.4s" (click)="core.navigate(user.url)">View
-                Behance
+              <a class="btn btn-outline-amber btn-lg wow fadeInDown waves-effect waves-light" mdbWavesEffect data-wow-delay="0.4s" (click)="core.navigate(user.url)">
+                View Behance
               </a>
             </div>
           </div>
