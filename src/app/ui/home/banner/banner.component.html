@@ -5,7 +5,7 @@
         <div class="row mt-5">
           <div class="col-md-12 wow fadeIn mb-3">
             <div class="container intro-info-content text-center" *ngIf="user">
-              <div class="avatar mx-auto">
+              <div *ngIf="user.images" class="avatar mx-auto">
                 <img [src]="user.images['276']" class="img-fluid rounded-circle z-depth-3 mx-auto d-block animated flipInX" data-wow-delay="0.6s"
                   alt="avatar">
               </div>

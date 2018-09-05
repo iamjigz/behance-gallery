@@ -10,8 +10,9 @@
 
     <div class="col-lg-8 pb-4">
       <p class="lead">The profile and projects on this page are fetched from the user's Behance profile using the Behance
-        API.</p>
-      <p><span>{{ user.sections["About"] }}</span></p>
+        API.
+      </p>
+      <p><span *ngIf="user.sections">{{ user.sections["About"] }}</span></p>
     </div>
   </div>
 </section>

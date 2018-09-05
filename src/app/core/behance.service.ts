@@ -17,7 +17,7 @@ export class User {
 }
 
 export class Project {
-  modules: any;
+  // modules: any;
 }
 
 const httpHeader = new HttpHeaders()

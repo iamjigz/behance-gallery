@@ -43,30 +43,18 @@ export class ProjectComponent implements OnInit {
             src: img.sizes.disp,
             animate: animations[Math.floor(Math.random() * animations.length)]
           });
+        } else if (img.type === 'media_collection') {
+          img.components.map(comp => {
+            this.images.push({
+              src: comp.sizes.disp,
+              animate: animations[Math.floor(Math.random() * animations.length)]
+            });
+          });
         }
       });
       this.updateTags();
     });
   }
-
-  // setMeta() {
-  //   this.meta.addTags(
-  //     [
-  //       { name: 'title', content: this.project.name },
-  //       {
-  //         name: 'description',
-  //         content: this.project.description
-  //       },
-  //       { name: 'image', content: this.project.covers.original },
-  //       { name: 'author', content: 'Jigno Alfred V. Venezuela' },
-  //       {
-  //         name: 'keywords',
-  //         content: this.project.fields.join(', ')
-  //       }
-  //     ],
-  //     false
-  //   );
-  // }
 
   updateTags() {
     this.meta.updateTag({ name: 'title', content: this.project.name });
