@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 import { AppGlobals } from '../../../core/app.globals';
 
@@ -28,12 +28,14 @@ export class ContactComponent implements OnInit {
   }
 
   submitForm() {
-    const body = `form-name=contactForm&name=${
-      this.contactForm.value.name
-    }&email=${this.contactForm.value.email}&subject=${
-      this.contactForm.value.subject
-    }&message=${this.contactForm.value.message}`;
+    const body = new HttpParams()
+      .set('form-name', 'contactForm')
+      .append('name', this.contactForm.value.name)
+      .append('email', this.contactForm.value.email)
+      .append('subject', this.contactForm.value.subject)
+      .append('message', this.contactForm.value.message);
 
+    console.log(body.toString());
     this.http
       .post('/', body.toString(), {
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' }

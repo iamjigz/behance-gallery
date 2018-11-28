@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class AppGlobals {
   readonly address: string = 'San Pablo, Laguna, PH';
-  readonly mobile: string = '0926-011-3502';
+  readonly mobile: string = '0926-011-8502';
   readonly email: string = 'jigzimon@gmail.com';
 
   readonly facebook: string = 'https://www.facebook.com/jigzimon';
