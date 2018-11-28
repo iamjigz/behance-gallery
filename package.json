@@ -30,6 +30,7 @@
     "@angular/service-worker": "^7.1.0",
     "@nguniversal/module-map-ngfactory-loader": "^6.1.0",
     "@types/chart.js": "^2.7.31",
+    "@types/jquery": "^3.3.22",
     "angular-bootstrap-md": "^6.3.0",
     "chart.js": "^2.5.0",
     "core-js": "^2.5.4",

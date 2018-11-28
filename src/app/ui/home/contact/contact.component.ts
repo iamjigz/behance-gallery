@@ -28,18 +28,8 @@ export class ContactComponent implements OnInit {
   }
 
   submitForm() {
-    const body = new HttpParams()
-      .set('form-name', 'contactForm')
-      .append('name', this.contactForm.value.name)
-      .append('email', this.contactForm.value.email)
-      .append('subject', this.contactForm.value.subject)
-      .append('message', this.contactForm.value.message);
-
-    console.log(body.toString());
-    this.http
-      .post('/', body.toString(), {
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
-      })
-      .subscribe(res => console.log(res));
+    $('#submitForm').on('click', function() {
+      $('#contact-form').submit();
+    });
   }
 }
