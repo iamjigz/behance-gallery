@@ -1,51 +1,102 @@
 <main id="main">
   <app-banner [user]="user"></app-banner>
-
   <div id="about"></div>
   <section class="container" *ngIf="user">
-    <app-about [user]="user"></app-about>
+    <app-about [user]="user" (userChange)="updateUser($event)"></app-about>
   </section>
 
-  <div class="view intro" style="background-image: none; z-index: 0; min-height: 700px;">
+  <div
+    class="view intro"
+    style="background-image: none; z-index: 0; min-height: 700px;"
+  >
     <div class="full-bg-img mask rgba-black-light">
       <div class="container flex-center">
         <div class="row mt-5 py-5">
           <div class="col-md-12 wow fadeIn mb-3">
             <div class="text-center">
-              <h1 class="display-1 mb-2 wow white-text fadeInDown" data-wow-delay="0.3s">Social <a class="amber-text font-bold">Links</a></h1>
-              <h5 class="font-up mb-3 mt-1 font-bold wow white-text fadeInDown" data-wow-delay="0.4s">Check other works</h5>
-              <a class="btn btn-elegant btn-lg wow fadeInDown waves-effect waves-light" mdbWavesEffect data-wow-delay="0.4s" (click)="core.navigate(globals.facebook)">Facebook</a>
-              <a class="btn btn-outline-amber btn-lg wow fadeInDown waves-effect waves-light" mdbWavesEffect data-wow-delay="0.4s" (click)="core.navigate(globals.instagram)">Instagram</a>
+              <h1
+                class="display-1 mb-2 wow white-text fadeInDown"
+                data-wow-delay="0.3s"
+              >
+                Social <a class="amber-text font-bold">Links</a>
+              </h1>
+              <h5
+                class="font-up mb-3 mt-1 font-bold wow white-text fadeInDown"
+                data-wow-delay="0.4s"
+              >
+                Check other works
+              </h5>
+              <a
+                class="btn btn-elegant btn-lg wow fadeInDown waves-effect waves-light"
+                mdbWavesEffect
+                data-wow-delay="0.4s"
+                (click)="core.navigate(globals.facebook)"
+                >Facebook</a
+              >
+              <a
+                class="btn btn-outline-amber btn-lg wow fadeInDown waves-effect waves-light"
+                mdbWavesEffect
+                data-wow-delay="0.4s"
+                (click)="core.navigate(globals.instagram)"
+                >Instagram</a
+              >
             </div>
           </div>
         </div>
       </div>
     </div>
     <div class="video-parallax">
-      <video src="https://staging.coverr.co/s3/mp4/Here-Boy.mp4" frameborder="0" autoplay="" loop=""></video>
+      <video
+        src="https://staging.coverr.co/s3/mp4/Here-Boy.mp4"
+        frameborder="0"
+        autoplay=""
+        loop=""
+      ></video>
     </div>
   </div>
 
   <div id="services"></div>
-  <section class="container">
-    <app-services></app-services>
-  </section>
+  <section class="container"><app-services></app-services></section>
 
-  <div class="view intro" style="background-image: url(https://source.unsplash.com/hfk6xOjQlFk); background-attachment: fixed; height: 1200px;">
-    <div class="full-bg-img mask rgba-black-light">
-    </div>
+  <div
+    class="view intro"
+    style="background-image: url(https://source.unsplash.com/hfk6xOjQlFk); background-attachment: fixed; height: 1200px;"
+  >
+    <div class="full-bg-img mask rgba-black-light"></div>
   </div>
 
-  <div class="view intro" style="background-image: url(https://source.unsplash.com/-T6CrnPs0LM); background-attachment: fixed; min-height: 1200px;">
+  <div
+    class="view intro"
+    style="background-image: url(https://source.unsplash.com/-T6CrnPs0LM); background-attachment: fixed; min-height: 1200px;"
+  >
     <div class="full-bg-img mask rgba-black-strong">
       <div class="container">
-        <div class="d-flex align-items-center d-flex justify-content-center" style="height: 700px">
+        <div
+          class="d-flex align-items-center d-flex justify-content-center"
+          style="height: 700px"
+        >
           <div class="row mt-5">
             <div class="col-md-12 wow fadeIn mb-3">
               <div class="intro-info-content text-center">
-                <h1 class="display-1 mb-2 wow amber-text fadeInDown" data-wow-delay="0.3s" href="#contact">Need a quote?</h1>
-                <h4 class="mb-3 mt-1 white-text font-bold wow fadeIn" data-wow-delay="0.4s">Get in touch!</h4>
-                <a class="btn btn-outline-amber btn-lg wow fadeInDown waves-effect waves-light" mdbWavesEffect data-wow-delay="0.4s" href="#contact">
+                <h1
+                  class="display-1 mb-2 wow amber-text fadeInDown"
+                  data-wow-delay="0.3s"
+                  href="#contact"
+                >
+                  Need a quote?
+                </h1>
+                <h4
+                  class="mb-3 mt-1 white-text font-bold wow fadeIn"
+                  data-wow-delay="0.4s"
+                >
+                  Get in touch!
+                </h4>
+                <a
+                  class="btn btn-outline-amber btn-lg wow fadeInDown waves-effect waves-light"
+                  mdbWavesEffect
+                  data-wow-delay="0.4s"
+                  href="#contact"
+                >
                   Contact Me
                 </a>
               </div>
@@ -57,21 +108,29 @@
   </div>
 
   <div id="contact" class="section"></div>
-  <section class="container">
-    <app-contact></app-contact>
-  </section>
+  <section class="container"><app-contact></app-contact></section>
 
   <section>
     <div class="container-fluid py-5" style="background: #b1bace;">
       <div class="flex-center">
         <ul class="list-unstyled">
           <li>
-            <h2 class="h2-responsive white-text mt-4 wow fadeIn" data-wow-delay="0.2s"><i class="fa fa-quote-left" aria-hidden="true"></i>
-              A camera is a tool for learning how to see without a camera.
-              <i class="fa fa-quote-right" aria-hidden="true"></i></h2>
+            <h2
+              class="h2-responsive white-text mt-4 wow fadeIn"
+              data-wow-delay="0.2s"
+            >
+              <i class="fa fa-quote-left" aria-hidden="true"></i> A camera is a
+              tool for learning how to see without a camera.
+              <i class="fa fa-quote-right" aria-hidden="true"></i>
+            </h2>
           </li>
           <li>
-            <h4 class="font-italic mt-4 white-text wow fadeIn" data-wow-delay="0.4s">~ Dorothea Lange</h4>
+            <h4
+              class="font-italic mt-4 white-text wow fadeIn"
+              data-wow-delay="0.4s"
+            >
+              ~ Dorothea Lange
+            </h4>
           </li>
         </ul>
       </div>

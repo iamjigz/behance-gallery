@@ -20,9 +20,7 @@ export class ProjectsComponent implements OnInit {
     public core: Core,
     public meta: Meta,
     public title: Title
-  ) {
-    this.user_id = this.behance.setUser();
-  }
+  ) {}
 
   getProjects() {
     this.behance.getProjects().subscribe(res => {

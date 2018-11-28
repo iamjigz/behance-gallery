@@ -52,12 +52,12 @@ export class BehanceService {
     return `${url}?client_id=${this.globals.key}`;
   }
 
-  public setUser() {
-    return this.globals.user_id;
+  public setUser(user: string) {
+    return (this.globals.user_id = user);
   }
 
-  public getUser(): Observable<any> {
-    return this.get(`/users/${this.globals.user_id}`);
+  public getUser(id = this.globals.user_id): Observable<any> {
+    return this.get(`/users/${id}`);
   }
 
   public getProjects(): Observable<any> {

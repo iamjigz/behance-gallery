@@ -1,18 +1,53 @@
 <section class="container">
-  <h1 class="section-heading text-center mb-5 mt-5 pt-4 wow fadeIn font-bold amber-text my-5">
+  <h1
+    class="section-heading text-center mb-5 mt-5 pt-4 wow fadeIn font-bold amber-text my-5"
+  >
     About Me
   </h1>
 
   <div class="row wow fadeIn" data-wow-delay="0.2s">
     <div class="col-lg-4 mb-2">
-      <img src="https://source.unsplash.com/7yhCwQSASxw" alt="My photo" class="img-fluid z-depth-1">
+      <img
+        src="https://source.unsplash.com/7yhCwQSASxw"
+        alt="My photo"
+        class="img-fluid z-depth-1"
+      />
     </div>
 
     <div class="col-lg-8 pb-4">
-      <p class="lead">The profile and projects on this page are fetched from the user's Behance profile using the Behance
-        API.
+      <p class="lead">
+        The profile and projects on this page are fetched from the user's
+        Behance profile using the Behance API.
       </p>
-      <p><span *ngIf="user.sections">{{ user.sections["About"] }}</span></p>
+
+      <div class="md-form">
+        <div *ngIf="alertMessage !== ''" class="alert alert-info" role="alert">
+          {{ alertMessage }}
+        </div>
+        <div class="md-form">
+          <input
+            mdbInputDirective
+            [mdbValidate]="false"
+            type="text"
+            name="text"
+            [(ngModel)]="username"
+            [(value)]="username"
+            id="form1"
+            class="form-control"
+          />
+          <label for="form1" class="">Try changing the username</label>
+        </div>
+        <button
+          type="submit"
+          class="btn btn-primary btn-md"
+          (click)="getUser(username)"
+        >
+          Update
+        </button>
+      </div>
+      <p>
+        <span *ngIf="user.sections">{{ user.sections['About'] }}</span>
+      </p>
     </div>
   </div>
 </section>

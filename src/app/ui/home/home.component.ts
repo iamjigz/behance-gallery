@@ -12,6 +12,7 @@ import { Core } from '../../core/core';
 })
 export class HomeComponent implements OnInit {
   public user: User;
+  public newUser: User;
 
   constructor(
     private behance: BehanceService,
@@ -30,6 +31,14 @@ export class HomeComponent implements OnInit {
   }
 
   getUser() {
+    this.behance.getUser().subscribe(res => {
+      this.user = res.user as User;
+      this.setMeta(this.user);
+    });
+  }
+
+  updateUser(user: string) {
+    this.behance.setUser(user);
     this.behance.getUser().subscribe(res => {
       this.user = res.user as User;
       this.setMeta(this.user);

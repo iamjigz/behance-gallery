@@ -15,5 +15,5 @@ export class AppGlobals {
   readonly cors: string = 'https://cors-anywhere.herokuapp.com/';
   readonly base: string = `${this.cors}https://api.behance.net/v2`;
   readonly key: string = '2atf2MJlepuAnBFswi1wIXVSwcMiJr4p';
-  readonly user_id: string = 'Yukari-Mishima';
+  public user_id = 'markbroyer';
 }
