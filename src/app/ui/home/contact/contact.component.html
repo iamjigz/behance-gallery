@@ -13,7 +13,7 @@
   <div class="container row">
     <div class="col-md-9 mb-md-0 mb-5">
       <form
-        name="contact"
+        name="contactForm"
         action="/done/"
         method="POST"
         netlify
@@ -22,7 +22,7 @@
         <input
           type="hidden"
           class="invisible"
-          name="form-name"
+          name="contactForm"
           value="contact"
         />
         <p class="hidden" class="invisible">
@@ -37,11 +37,11 @@
                 mdbInputDirective
                 [mdbValidate]="false"
                 type="text"
-                name="text"
-                id="contact-name"
+                name="name"
+                id="name"
                 class="form-control"
               />
-              <label for="contact-name" class="">Your name</label>
+              <label for="name" class="">Your name</label>
             </div>
           </div>
 
@@ -51,11 +51,11 @@
                 mdbInputDirective
                 [mdbValidate]="false"
                 type="text"
-                name="text"
-                id="contact-email"
+                name="email"
+                id="email"
                 class="form-control"
               />
-              <label for="contact-email" class="">Your email</label>
+              <label for="email" class="">Your email</label>
             </div>
           </div>
         </div>
@@ -67,11 +67,11 @@
                 mdbInputDirective
                 [mdbValidate]="false"
                 type="text"
-                name="text"
-                id="contact-Subject"
+                name="subject"
+                id="subject"
                 class="form-control"
               />
-              <label for="contact-Subject" class="">Subject</label>
+              <label for="subject" class="">Subject</label>
             </div>
           </div>
         </div>
@@ -83,12 +83,12 @@
                 mdbInputDirective
                 [mdbValidate]="false"
                 type="text"
-                name="text"
-                id="contact-message"
+                name="message"
+                id="message"
                 class="form-control md-textarea"
                 rows="3"
               ></textarea>
-              <label for="contact-message">Your message</label>
+              <label for="message">Your message</label>
             </div>
           </div>
         </div>
@@ -97,7 +97,12 @@
       <div data-netlify-recaptcha></div>
 
       <div class="text-center text-md-left">
-        <button type="submit" class="btn btn-amber waves-light" mdbWavesEffect>
+        <button
+          (click)="submitForm()"
+          type="submit"
+          class="btn btn-amber waves-light"
+          mdbWavesEffect
+        >
           Send <i class="fas fa-paper-plane ml-2"></i>
         </button>
       </div>
