@@ -43,7 +43,7 @@ export class ContactComponent implements OnInit {
       .subscribe(res => console.log(res));
 
     $('#submitForm').on('click', function() {
-      $('#contact-form').submit();
+      $('#contactForm').submit();
     });
   }
 }
