@@ -11,6 +11,10 @@ import { AppGlobals } from '../../../core/app.globals';
 })
 export class ContactComponent implements OnInit {
   public contactForm: FormGroup;
+  public name = '';
+  public email = '';
+  public subject = '';
+  public message = '';
 
   constructor(
     public globals: AppGlobals,
@@ -30,10 +34,10 @@ export class ContactComponent implements OnInit {
   submitForm() {
     const body = new HttpParams()
       .set('form-name', 'contactForm')
-      .append('name', this.contactForm.value.name)
-      .append('email', this.contactForm.value.email)
-      .append('subject', this.contactForm.value.subject)
-      .append('message', this.contactForm.value.message);
+      .append('name', this.name)
+      .append('email', this.email)
+      .append('subject', this.subject)
+      .append('message', this.message);
 
     console.log(body.toString());
     this.http
@@ -41,9 +45,5 @@ export class ContactComponent implements OnInit {
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
       })
       .subscribe(res => console.log(res));
-
-    $('#submitForm').on('click', function() {
-      $('#contactForm').submit();
-    });
   }
 }
